@@ -10,6 +10,7 @@
 <link rel='import' href='bower_components/paper-input/paper-input.html'/>
 <link rel='import' href='bower_components/paper-dialog/paper-dialog.html'/>
 <link rel='import' href='bower_components/iron-icons/iron-icons.html'/>
+<link rel='import' href='bower_components/google-signin/google-signin.html'/>
 
 <dom-module id='tasks-list'>
  
@@ -17,6 +18,7 @@
         <!-- Create a toolbar/actionbar -->
         <paper-toolbar>
             <div class="title"> My Tasks </div>
+			<google-signin client-id="282036472468-7oj91an3qqp80458umtv3bt04akmuu28.apps.googleusercontent.com" scopes="https://www.googleapis.com/auth/drive"></google-signin>
         </paper-toolbar>
  
         <div>
