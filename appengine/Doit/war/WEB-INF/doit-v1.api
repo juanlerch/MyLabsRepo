@@ -27,11 +27,123 @@
   "ownerDomain" : "com.labstation.doit",
   "ownerName" : "com.labstation.doit",
   "methods" : {
+    "doit.listActivities" : {
+      "path" : "activity",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.labstation.doit.api.Service.listActivities",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "doit.addActivity" : {
+      "path" : "addActivity/{name}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.labstation.doit.api.Service.addActivity",
+      "request" : {
+        "parameters" : {
+          "name" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    }
   },
   "descriptor" : {
     "schemas" : {
+      "Activity" : {
+        "id" : "Activity",
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "$ref" : "Key"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "fromDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "toDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "assignedTo" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "Key" : {
+        "id" : "Key",
+        "type" : "object",
+        "properties" : {
+          "kind" : {
+            "type" : "string"
+          },
+          "appId" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "parent" : {
+            "$ref" : "Key"
+          },
+          "namespace" : {
+            "type" : "string"
+          },
+          "complete" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "ActivityCollection" : {
+        "id" : "ActivityCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Activity"
+            }
+          }
+        }
+      }
     },
     "methods" : {
+      "com.labstation.doit.api.Service.listActivities" : {
+        "response" : {
+          "$ref" : "ActivityCollection"
+        }
+      },
+      "com.labstation.doit.api.Service.addActivity" : {
+      }
     }
   }
 }

@@ -19,14 +19,14 @@ public class Service {
 
 	
 	@ApiMethod(name = "listActivities")
-	List<Activity> listActivities() {
+	public List<Activity> listActivities() {
 		ActivityManager activityManager= new ActivityManager();
 		return activityManager.list();
 	}
 	
 	
 	@ApiMethod(name = "addActivity")
-	void addActivity(@Named("name") String name) {
+	public void addActivity(@Named("name") String name) {
 		ActivityManager activityManager= new ActivityManager();
 		activityManager.addActivity(name);
 	}

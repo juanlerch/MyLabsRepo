@@ -2,11 +2,13 @@
 package com.labstation.doit.logic;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.tools.ant.types.resources.selectors.Date;
+
+
 
 import com.google.appengine.api.datastore.Entity;
 import com.labstation.doit.model.Activity;

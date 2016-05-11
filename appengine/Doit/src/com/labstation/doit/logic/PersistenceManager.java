@@ -31,7 +31,7 @@ public class PersistenceManager {
 		String name = aClass.getSimpleName();
 
 		//Filter propertyFilter =new FilterPredicate("lastName", FilterOperator.EQUAL, targetLastName)
-		Query q = new Query("name");//.setFilter(propertyFilter);
+		Query q = new Query(name);//.setFilter(propertyFilter);
 		
 		PreparedQuery pq = datastore.prepare(q);
 		
