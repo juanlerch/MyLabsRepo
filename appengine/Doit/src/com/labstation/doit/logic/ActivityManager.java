@@ -33,7 +33,7 @@ public class ActivityManager {
 	public List<Activity> list(){
 
 		List<Activity> activityList = new ArrayList<Activity>();
-		Iterator<Entity> result = persistenceManager.list(Activity.class);
+		Iterator<Entity> result = persistenceManager.iterator(Activity.class);
 		
 		while(result.hasNext()){
 	

@@ -29,22 +29,14 @@
   -->
   
   <resource-files>
-  <exclude path="/angular2-quickstart/node_modules/" />
-  <exclude path="/angular2-quickstart-js/node_modules/" />
-  <exclude path="/angular2-quickstart/node_modules/**" />
-  <exclude path="/angular2-quickstart-js/node_modules/**" />
-  <exclude path="/war/angular2-quickstart/node_modules/" />
-  <exclude path="/war/angular2-quickstart-js/node_modules/" />
-  <exclude path="/war/angular2-quickstart/node_modules/**" />
-  <exclude path="/war/angular2-quickstart-js/node_modules/**" />
-  <exclude path="angular2-quickstart/node_modules/" />
-  <exclude path="angular2-quickstart-js/node_modules/" />
-  <exclude path="angular2-quickstart/node_modules/**" />
-  <exclude path="angular2-quickstart-js/node_modules/**" />
-  <exclude path="war/angular2-quickstart/node_modules/" />
-  <exclude path="war/angular2-quickstart-js/node_modules/" />
-  <exclude path="war/angular2-quickstart/node_modules/**" />
-  <exclude path="war/angular2-quickstart-js/node_modules/**" />
+  <exclude path="/angular2/node_modules/" />
+  <exclude path="/angular2/node_modules/**" />
+  <exclude path="/war/angular2/node_modules/" />
+  <exclude path="/war/angular2/node_modules/**" />
+  <exclude path="angular2/node_modules/" />
+  <exclude path="angular2/node_modules/**" />
+  <exclude path="war/angular2/node_modules/" />
+  <exclude path="war/angular2/node_modules/**" />
 </resource-files>  
   
 

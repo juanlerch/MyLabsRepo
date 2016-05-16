@@ -1,11 +1,13 @@
 package com.labstation.doit.logic;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
@@ -27,7 +29,20 @@ public class PersistenceManager {
 	}
 	
 	
-	public Iterator<Entity> list(Class aClass) {
+	public List<Entity> list(Class aClass) {
+		String name = aClass.getSimpleName();
+
+		//Filter propertyFilter =new FilterPredicate("lastName", FilterOperator.EQUAL, targetLastName)
+		Query q = new Query(name);//.setFilter(propertyFilter);
+		
+		PreparedQuery pq = datastore.prepare(q);
+		
+		
+		return pq.asList(FetchOptions.Builder.withLimit(10) );
+				
+	}
+	
+	public Iterator<Entity> iterator(Class aClass) {
 		String name = aClass.getSimpleName();
 
 		//Filter propertyFilter =new FilterPredicate("lastName", FilterOperator.EQUAL, targetLastName)

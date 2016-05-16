@@ -6,7 +6,9 @@ import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.Named;
+import com.google.appengine.api.datastore.Entity;
 import com.labstation.doit.logic.ActivityManager;
+import com.labstation.doit.logic.PersistenceManager;
 import com.labstation.doit.model.Activity;
 
 @Api(name = "doit",
@@ -23,6 +25,14 @@ public class Service {
 		ActivityManager activityManager= new ActivityManager();
 		return activityManager.list();
 	}
+	
+	@ApiMethod(name = "listActivitiesAsEntities")
+	public List<Entity>  listActivitiesAsEntities() {
+		PersistenceManager pm = new PersistenceManager();
+		List<Entity> e = pm.list(Activity.class);
+		return e;
+	}
+	
 	
 	
 	@ApiMethod(name = "addActivity")
