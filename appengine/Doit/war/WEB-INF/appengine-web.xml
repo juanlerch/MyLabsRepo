@@ -29,27 +29,27 @@
   -->
   
   <resource-files>
-  <exclude path="/angular2/node_modules/" />
-  <exclude path="/angular2/node_modules/**" />
-  <exclude path="/war/angular2/node_modules/" />
-  <exclude path="/war/angular2/node_modules/**" />
+  <exclude path="/app-angular2/node_modules/" />
+  <exclude path="/app-angular2/node_modules/**" />
+  <exclude path="/war/app-angular2/node_modules/" />
+  <exclude path="/war/app-angular2/node_modules/**" />
   <exclude path="angular2/node_modules/" />
   <exclude path="angular2/node_modules/**" />
-  <exclude path="war/angular2/node_modules/" />
-  <exclude path="war/angular2/node_modules/**" />
+  <exclude path="war/app-angular2/node_modules/" />
+  <exclude path="war/app-angular2/node_modules/**" />
 </resource-files>  
   
 
 <static-files>
   <include path="/index.html"/>
 
-  <include path="/angular2/app/**.*"/>
-  <include path="/angular2/*.js"/>
-  <include path="/angular2/*.html"/>
-  <include path="/angular2/*.css"/>
+  <include path="/app-angular2/app/**.*"/>
+  <include path="/app-angular2/*.js"/>
+  <include path="/app-angular2/*.html"/>
+  <include path="/app-angular2/*.css"/>
   
-  <include path="/angular2/node_modules/**.js"/> 
-  <include path="/angular2/node_modules/**.map"/> 
+  <include path="/app-angular2/node_modules/**.js"/> 
+  <include path="/app-angular2/node_modules/**.map"/> 
 
   <include path="/app-doit/**.*"/> 
   <include path="/app-mdl/**.*"/> 

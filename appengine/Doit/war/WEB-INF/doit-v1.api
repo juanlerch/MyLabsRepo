@@ -27,14 +27,14 @@
   "ownerDomain" : "com.labstation.doit",
   "ownerName" : "com.labstation.doit",
   "methods" : {
-    "doit.listActivities" : {
-      "path" : "activity",
+    "doit.listActivitiesAsEntities" : {
+      "path" : "entity",
       "httpMethod" : "GET",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.labstation.doit.api.Service.listActivities",
+      "rosyMethod" : "com.labstation.doit.api.Service.listActivitiesAsEntities",
       "request" : {
         "body" : "empty"
       },
@@ -63,14 +63,14 @@
         "body" : "empty"
       }
     },
-    "doit.listActivitiesAsEntities" : {
-      "path" : "entity",
+    "doit.listActivities" : {
+      "path" : "activity",
       "httpMethod" : "GET",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.labstation.doit.api.Service.listActivitiesAsEntities",
+      "rosyMethod" : "com.labstation.doit.api.Service.listActivities",
       "request" : {
         "body" : "empty"
       },
@@ -81,32 +81,30 @@
   },
   "descriptor" : {
     "schemas" : {
-      "Activity" : {
-        "id" : "Activity",
+      "Entity" : {
+        "id" : "Entity",
         "type" : "object",
         "properties" : {
           "key" : {
             "$ref" : "Key"
           },
-          "name" : {
+          "parent" : {
+            "$ref" : "Key"
+          },
+          "namespace" : {
             "type" : "string"
           },
-          "description" : {
+          "kind" : {
             "type" : "string"
           },
-          "fromDate" : {
-            "type" : "string",
-            "format" : "date-time"
+          "appId" : {
+            "type" : "string"
           },
-          "toDate" : {
-            "type" : "string",
-            "format" : "date-time"
+          "propertiesFrom" : {
+            "$ref" : "Entity"
           },
-          "assignedTo" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
+          "properties" : {
+            "$ref" : "JsonMap"
           }
         }
       },
@@ -138,45 +136,6 @@
           }
         }
       },
-      "ActivityCollection" : {
-        "id" : "ActivityCollection",
-        "type" : "object",
-        "properties" : {
-          "items" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "Activity"
-            }
-          }
-        }
-      },
-      "Entity" : {
-        "id" : "Entity",
-        "type" : "object",
-        "properties" : {
-          "key" : {
-            "$ref" : "Key"
-          },
-          "parent" : {
-            "$ref" : "Key"
-          },
-          "namespace" : {
-            "type" : "string"
-          },
-          "kind" : {
-            "type" : "string"
-          },
-          "appId" : {
-            "type" : "string"
-          },
-          "propertiesFrom" : {
-            "$ref" : "Entity"
-          },
-          "properties" : {
-            "$ref" : "JsonMap"
-          }
-        }
-      },
       "JsonMap" : {
         "id" : "JsonMap",
         "type" : "object"
@@ -192,19 +151,60 @@
             }
           }
         }
+      },
+      "Activity" : {
+        "id" : "Activity",
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "$ref" : "Key"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "fromDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "toDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "assignedTo" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "ActivityCollection" : {
+        "id" : "ActivityCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Activity"
+            }
+          }
+        }
       }
     },
     "methods" : {
-      "com.labstation.doit.api.Service.listActivities" : {
+      "com.labstation.doit.api.Service.listActivitiesAsEntities" : {
         "response" : {
-          "$ref" : "ActivityCollection"
+          "$ref" : "EntityCollection"
         }
       },
       "com.labstation.doit.api.Service.addActivity" : {
       },
-      "com.labstation.doit.api.Service.listActivitiesAsEntities" : {
+      "com.labstation.doit.api.Service.listActivities" : {
         "response" : {
-          "$ref" : "EntityCollection"
+          "$ref" : "ActivityCollection"
         }
       }
     }
