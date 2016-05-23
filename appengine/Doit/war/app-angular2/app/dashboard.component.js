@@ -12,19 +12,19 @@ var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var hero_service_1 = require('./hero.service');
 var DashboardComponent = (function () {
-    function DashboardComponent(router, heroService) {
-        this.router = router;
-        this.heroService = heroService;
+    function DashboardComponent(_router, _heroService) {
+        this._router = _router;
+        this._heroService = _heroService;
         this.heroes = [];
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.heroService.getHeroes()
+        this._heroService.getHeroes()
             .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
     };
     DashboardComponent.prototype.gotoDetail = function (hero) {
         var link = ['HeroDetail', { id: hero.id }];
-        this.router.navigate(link);
+        this._router.navigate(link);
     };
     DashboardComponent = __decorate([
         core_1.Component({

@@ -166,11 +166,11 @@
           "kind" : {
             "type" : "string"
           },
-          "propertiesFrom" : {
-            "$ref" : "Entity"
-          },
           "appId" : {
             "type" : "string"
+          },
+          "propertiesFrom" : {
+            "$ref" : "Entity"
           },
           "properties" : {
             "$ref" : "JsonMap"

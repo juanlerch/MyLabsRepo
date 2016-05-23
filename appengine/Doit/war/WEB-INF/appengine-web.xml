@@ -29,6 +29,7 @@
   -->
   
  <resource-files>
+  <exclude path="/app-angular2-seed/**.*" />
   <exclude path="/app-angular2/node_modules/" />
   <exclude path="/app-angular2/node_modules/**" />
   <exclude path="/war/app-angular2/node_modules/" />
@@ -41,12 +42,14 @@
   
 
 <static-files>
+
   <include path="/index.html"/>
   
   <include path="/app-angular2/app/**.*"/>
   <include path="/app-angular2/*.js"/>
   <include path="/app-angular2/*.html"/>
   <include path="/app-angular2/*.css"/>
+  <include path="/app-angular2/*.json"/>
   
   <include path="/app-angular2/node_modules/**.js"/> 
   <include path="/app-angular2/node_modules/**.map"/> 
