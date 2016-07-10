@@ -27,21 +27,6 @@
   "ownerDomain" : "com.labstation.doit",
   "ownerName" : "com.labstation.doit",
   "methods" : {
-    "doit.listActivities" : {
-      "path" : "activity",
-      "httpMethod" : "GET",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "com.labstation.doit.api.Service.listActivities",
-      "request" : {
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
     "doit.addActivity" : {
       "path" : "addActivity/{name}",
       "httpMethod" : "POST",
@@ -61,6 +46,21 @@
       },
       "response" : {
         "body" : "empty"
+      }
+    },
+    "doit.listActivities" : {
+      "path" : "activity",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.labstation.doit.api.Service.listActivities",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
       }
     },
     "doit.listActivitiesAsEntities" : {
@@ -195,12 +195,12 @@
       }
     },
     "methods" : {
+      "com.labstation.doit.api.Service.addActivity" : {
+      },
       "com.labstation.doit.api.Service.listActivities" : {
         "response" : {
           "$ref" : "ActivityCollection"
         }
-      },
-      "com.labstation.doit.api.Service.addActivity" : {
       },
       "com.labstation.doit.api.Service.listActivitiesAsEntities" : {
         "response" : {

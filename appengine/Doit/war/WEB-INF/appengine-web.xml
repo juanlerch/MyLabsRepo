@@ -44,7 +44,7 @@
 <static-files>
 
   <include path="/index.html"/>
-  
+  <include path="/faviicon.ico"/>
   <include path="/app-angular2/app/**.*"/>
   <include path="/app-angular2/*.js"/>
   <include path="/app-angular2/*.html"/>
@@ -56,6 +56,10 @@
 
   <include path="/app-doit/**.*"/> 
   <include path="/app-mdl/**.*"/> 
-
+  <include path="/app-polymer/**.html"/> 
+  <include path="/app-polymer/**.css"/> 
+  <include path="/app-polymer/**.js"/> 
+  <include path="/app-polymer/**.map"/> 
+  <include path="/app-polymer/app-drawer-template/imagens/**.*"/> 
 </static-files>
 </appengine-web-app>
